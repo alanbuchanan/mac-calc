@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans:100,200,300' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body ng-controller="MainCtrl">
+    <table cellspacing="0" ng-show="loaded">
+        <tr id="fake-buttons">
+            <td>
+                <span><i class="fa fa-circle"></i></span>
+                <span><i class="fa fa-circle"></i></span>
+                <span><i class="fa fa-circle"></i></span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" id="output-container" class="ng-style: ">
+                <span>{{outputVal}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" ng-click="clear()" id="clear">
+                {{clearAbbr}}
+            </td>
+
+            <td ng-click="operator('%')" id="mod">
+                %
+            </td>
+            <td ng-click="operator('/')" class="operator">
+                ÷
+            </td>
+        </tr>
+        <tr>
+            <td ng-repeat="val in numsRow1" ng-click="append(val)" class="number">
+                {{val}}
+            </td>
+            <td ng-click="operator('*')" class="operator">
+                &times;
+            </td>
+        </tr>
+        <tr>
+            <td ng-repeat="val in numsRow2" ng-click="append(val)" class="number">
+                {{val}}
+            </td>
+            <td ng-click="operator('-')" class="operator">
+                -
+            </td>
+        </tr>
+        <tr>
+            <td ng-repeat="val in numsRow3" ng-click="append(val)" class="number">
+                {{val}}
+            </td>
+            <td ng-click="operator('+')" class="operator">
+                +
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" ng-click="append(0)" id="zero">
+                <span>0</span>
+            </td>
+            <td ng-click="appendDot()" class="number">
+                .
+            </td>
+            <td ng-click="equals()" class="operator" id="equals">
+                =
+            </td>
+        </tr>
+    </table>
+    <script src="bower_components/mathjs/dist/math.min.js"></script>
+</body>
+</html>
