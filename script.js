@@ -2,7 +2,6 @@ var app = angular.module('app', []);
 
 app.controller('MainCtrl', function ($scope) {
 
-    $scope.loaded = false;
     $scope.numsRow1 = [7, 8, 9];
     $scope.numsRow2 = [4, 5, 6];
     $scope.numsRow3 = [1, 2, 3];
@@ -128,5 +127,4 @@ app.controller('MainCtrl', function ($scope) {
             $scope.equalsAlreadyPressed = true;
         }
     };
-    $scope.loaded = true;
 });
